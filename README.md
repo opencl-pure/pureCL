@@ -34,7 +34,8 @@ import (
 )
 
 func main() {
-	err := pure.Init(pure.Version2_0) //init with version of OpenCL
+  //init with version of OpenCL and variadic special paths (if you know)
+	err := pure.Init(pure.Version2_0/*, "special_path1/openclLib.dll", "special_path1/openclLib.so" */) 
 	if err != nil {
 		log.Println(err)
 		return

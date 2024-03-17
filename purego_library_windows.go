@@ -8,12 +8,17 @@ import (
 	"unsafe"
 )
 
-func loadLibrary() (uintptr, error) {
-	handle, err := syscall.LoadLibrary("opencl.dll")
-	if err != nil {
-		return 0, err
+func loadLibrary(paths []string) (uintptr, error) {
+	paths = append(paths, "opencl.dll")
+	var resultError error
+	for i := 0; i < len(paths); i++ {
+		handle, err := syscall.LoadLibrary(paths)
+		if err == nil {
+			return uintptr(handle), err
+		}
+		resultError = ErrJoin(resultError, err)
 	}
-	return uintptr(handle), err
+	return uintptr(0), ErrJoin(errors.New("no path has passed: "), resultError)
 }
 
 func initUnsupported(handle syscall.Handle, errIn error) error {

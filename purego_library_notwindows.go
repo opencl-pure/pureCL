@@ -40,18 +40,21 @@ func getOpenCLPath() ([]string, error) {
 	return nil, errors.New("unknown system paths")
 }
 
-func loadLibrary() (uintptr, error) {
-	paths, err := getOpenCLPath()
+func loadLibrary(paths []string) (uintptr, error) {
+	paths2, err := getOpenCLPath()
 	if err != nil {
 		return 0, err
 	}
+	paths = append(paths, paths2...)
+	var resultError error
 	for i := 0; i < len(paths); i++ {
-		libOpenCl, err := purego.Dlopen(paths[i], purego.RTLD_NOW|purego.RTLD_GLOBAL)
-		if err == nil {
+		libOpenCl, err0 := purego.Dlopen(paths[i], purego.RTLD_NOW|purego.RTLD_GLOBAL)
+		if err0 == nil {
 			return libOpenCl, nil
 		}
+		resultError = ErrJoin(resultError, err0)
 	}
-	return 0, errors.New("no path has passed")
+	return 0, ErrJoin(errors.New("no path has passed: "), resultError)
 }
 
 func initUnsupported(handle uintptr, errIn error) error {

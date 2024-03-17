@@ -5,8 +5,8 @@ import (
 	"github.com/ebitengine/purego"
 )
 
-func Init(version Version) error {
-	handle, err := loadLibrary()
+func Init(version Version, paths ...string) error {
+	handle, err := loadLibrary(paths)
 	if err != nil {
 		return err
 	}
@@ -68,7 +68,7 @@ func Init(version Version) error {
 }
 
 func InitializeGLSharing() error {
-	handle, err := loadLibrary()
+	handle, err := loadLibrary(nil)
 	if err != nil {
 		return err
 	}
