@@ -3,7 +3,7 @@ package pureCL
 import (
 	"errors"
 	"fmt"
-	"github.com/opencl-pure/constantCL"
+	"github.com/opencl-pure/constantsCL"
 )
 
 func StatusToErr(code Status) error {

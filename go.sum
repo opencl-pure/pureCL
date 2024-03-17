@@ -2,6 +2,7 @@ github.com/ebitengine/purego v0.6.1 h1:sjN8rfzbhXQ59/pE+wInswbU9aMDHiwlup4p/a07M
 github.com/ebitengine/purego v0.6.1/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
 github.com/opencl-pure/constantCL v0.0.0-20240317123136-9a4ef0ba2522 h1:3H4XxxcylfFXm4+SigcroDw3uV7bLUHsRbTNG4m6fOo=
 github.com/opencl-pure/constantCL v0.0.0-20240317123136-9a4ef0ba2522/go.mod h1:YinSdvGHomXZP9MgxZ4vUs7WT7iePPdFL6VeDlL2ukY=
+github.com/opencl-pure/constantsCL v0.0.0-20240317133134-e25d0cce2178/go.mod h1:MwfM6U1JKf99LyG4YTryEsMUHY9QsAoBZCwSJW+zNlk=
 golang.org/x/sys v0.7.0 h1:3jlCCIQZPdOYu1h8BkNvLz8Kgwtae2cagcG/VamtZRU=
 golang.org/x/sys v0.7.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.18.0 h1:DBdB3niSjOA/O0blCZBqDefyWNYveAYMNF1Wum0DYQ4=
