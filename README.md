@@ -16,7 +16,7 @@ Thank to both of them!
 -  try to have all functions of OpenCL (so if you have some, give PR)
 -  easy to multiplatform (thank [purego](https://github.com/ebitengine/purego))
 -  easy find path (custumize path to openclLib shared library)
--  easy to compile, we do not need cgo and knowing link to shared library
+-  easy to compile, we do not need cgo and not need knowing link to shared library
 -  try [purego](https://github.com/ebitengine/purego) and bring opencl on android without complicate link
 # not goal
 - be faster as cgo version, [purego](https://github.com/ebitengine/purego) is using same mechanism as cgo 
