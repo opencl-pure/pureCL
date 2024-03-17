@@ -1,7 +1,6 @@
 package pureCL
 
 import (
-	"errors"
 	"github.com/ebitengine/purego"
 )
 
@@ -62,22 +61,23 @@ func Init(version Version, paths ...string) error {
 	err = registerLibFuncWithoutPanic(&GetMemObjectInfo, handle, "clGetMemObjectInfo", err)
 	err = registerLibFuncWithoutPanic(&ReleaseMemObject, handle, "clReleaseMemObject", err)
 	if err != nil {
-		err = errors.Join(err, purego.Dlclose(handle))
+		err = ErrJoin(err, purego.Dlclose(handle))
 	}
 	return err
 }
 
-func InitializeGLSharing() error {
-	handle, err := loadLibrary(nil)
+func InitializeGLSharing(paths ...string) error {
+	handle, err := loadLibrary(paths)
 	if err != nil {
 		return err
 	}
-	// GL
 	err = registerLibFuncWithoutPanic(&CreateFromGLTexture, handle, "clCreateFromGLTexture", err)
 	err = registerLibFuncWithoutPanic(&EnqueueAcquireGLObjects, handle, "clEnqueueAcquireGLObjects", err)
 	err = registerLibFuncWithoutPanic(&EnqueueReleaseGLObjects, handle, "clEnqueueReleaseGLObjects", err)
 	err = registerLibFuncWithoutPanic(&GetGLObjectInfo, handle, "clGetGLObjectInfo", err)
 	err = registerLibFuncWithoutPanic(&GetGLTextureInfo, handle, "clGetGLTextureInfo", err)
-
+	if err != nil {
+		err = ErrJoin(err, purego.Dlclose(handle))
+	}
 	return err
 }
