@@ -1,8 +1,8 @@
-github.com/ebitengine/purego v0.5.1 h1:hNunhThpOf1vzKl49v6YxIsXLhl92vbBEv1/2Ez3ZrY=
-github.com/ebitengine/purego v0.5.1/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
-github.com/ebitengine/purego v0.6.0-alpha h1:7skbuQ4040gPjIt6Dmvreeyjuuy+xIK1CW5cssLg0+o=
-github.com/ebitengine/purego v0.6.0-alpha/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
-github.com/ebitengine/purego v0.6.0-alpha.2 h1:lYSvMtNBEjNGAzqPC5WP7bHUOxkFU3L+JZMdxK7krkw=
-github.com/ebitengine/purego v0.6.0-alpha.2/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
+github.com/ebitengine/purego v0.6.1 h1:sjN8rfzbhXQ59/pE+wInswbU9aMDHiwlup4p/a07Mkg=
+github.com/ebitengine/purego v0.6.1/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
+github.com/opencl-pure/constantCL v0.0.0-20240317123136-9a4ef0ba2522 h1:3H4XxxcylfFXm4+SigcroDw3uV7bLUHsRbTNG4m6fOo=
+github.com/opencl-pure/constantCL v0.0.0-20240317123136-9a4ef0ba2522/go.mod h1:YinSdvGHomXZP9MgxZ4vUs7WT7iePPdFL6VeDlL2ukY=
 golang.org/x/sys v0.7.0 h1:3jlCCIQZPdOYu1h8BkNvLz8Kgwtae2cagcG/VamtZRU=
 golang.org/x/sys v0.7.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.18.0 h1:DBdB3niSjOA/O0blCZBqDefyWNYveAYMNF1Wum0DYQ4=
+golang.org/x/sys v0.18.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
