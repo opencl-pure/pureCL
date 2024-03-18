@@ -2,6 +2,9 @@ package pureCL
 
 import "unsafe"
 
+// from dlopen
+var handle uintptr
+
 // functions
 var (
 	// GetPlatformIDs this wrap opencl clGetPlatformIDs and do returns a list of available OpenCL platforms

@@ -4,8 +4,12 @@ import (
 	"github.com/ebitengine/purego"
 )
 
+func SetHandle(handleExternal uintptr) {
+	handle = handleExternal
+}
+
 func Init(version Version, paths ...string) error {
-	handle, err := loadLibrary(paths)
+	err := loadLibrary(paths)
 	if err != nil {
 		return err
 	}
@@ -67,7 +71,7 @@ func Init(version Version, paths ...string) error {
 }
 
 func InitializeGLSharing(paths ...string) error {
-	handle, err := loadLibrary(paths)
+	err := loadLibrary(paths)
 	if err != nil {
 		return err
 	}
