@@ -29,6 +29,8 @@ func Init(version Version, paths ...string) error {
 	err = registerLibFuncWithoutPanic(&CreateProgramWithSource, handle, "clCreateProgramWithSource", err)
 	err = registerLibFuncWithoutPanic(&CreateBuffer, handle, "clCreateBuffer", err)
 	err = registerLibFuncWithoutPanic(&CreateImage2D, handle, "clCreateImage2D", err)
+	err = registerLibFuncWithoutPanic(&CreateImage3D, handle, "clCreateImage3D", err)
+	err = registerLibFuncWithoutPanic(&CreateImage, handle, "clCreateImage", err)
 	// Command queue
 	if version == Version2_0 || version == Version3_0 {
 		err = registerLibFuncWithoutPanic(&CreateCommandQueueWithProperties, handle, "clCreateCommandQueueWithProperties", err)
@@ -39,13 +41,7 @@ func Init(version Version, paths ...string) error {
 	err = registerLibFuncWithoutPanic(&EnqueueNDRangeKernel, handle, "clEnqueueNDRangeKernel", err)
 	err = registerLibFuncWithoutPanic(&EnqueueReadBuffer, handle, "clEnqueueReadBuffer", err)
 	err = registerLibFuncWithoutPanic(&EnqueueWriteBuffer, handle, "clEnqueueWriteBuffer", err)
-	//purego: broken unsupoted arguments
-	/*
-		err = registerLibFuncWithoutPanic(&EnqueueReadImage, handle, "clEnqueueReadImage", err)
-		err = registerLibFuncWithoutPanic(&EnqueueWriteImage, handle, "clEnqueueWriteImage", err)
-		err = registerLibFuncWithoutPanic(&EnqueueMapImage, handle, "clEnqueueMapImage", err)
-		err = registerLibFuncWithoutPanic(&EnqueueMapBuffer, handle, "clEnqueueMapBuffer", err) // maybe?
-	*/
+
 	err = initUnsupported(handle, err)
 
 	err = registerLibFuncWithoutPanic(&EnqueueUnmapMemObject, handle, "clEnqueueUnmapMemObject", err)
