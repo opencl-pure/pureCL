@@ -106,8 +106,8 @@ type (
 		RowPitch    Size
 		SlisePitch  Size
 		Buffer      Buffer
-		NumMipLevel uint32
-		NumSamples  uint32
+		NumMipLevel uint
+		NumSamples  uint
 	}
 )
 
